@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienController;
+use App\Models\Dokter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route untuk menambahkan daftar pasien
+Route::get('/pasien',[PasienController::class, 'index']);
 
-// Route untuk menampilkan daftar pasien
-Route::get('/pasien', [PasienController::class, 'index']);
+// route untuk menampilkan form tambah pasien
+Route::get('/pasien/create',[PasienController::class, 'create']); 
 
-// Route untuk menampilkan form tambah pasien
-Route::get('/pasien/create', [PasienController::class, 'create']);
+// route untuk memproses from tambah pasien
+Route::post('/pasien',[PasienController::class, 'store']);
 
-//Route untuk memproses form tambah pasien
-Route::post('/pasien', [PasienController::class, 'store']);
+// route untuk  menampilkan daftar dokter
+Route::get('/dokter',[DokterController::class, 'index']);
+
+//route untuk menampilkan form tambah dokter
+Route::get('/dokter/create',[DokterController::class, 'create']);
+
+// route untuk memproses from tambah pasien
+Route::post('/dokter',[DokterController::class, 'store']);
