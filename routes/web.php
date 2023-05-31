@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\PasienContorller;
 use App\Http\Controllers\PasienController;
 use App\Models\Dokter;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // Route untuk menambahkan daftar pasien
 Route::get('/pasien',[PasienController::class, 'index']);
@@ -37,3 +36,6 @@ Route::get('/dokter/create',[DokterController::class, 'create']);
 
 // route untuk memproses from tambah pasien
 Route::post('/dokter',[DokterController::class, 'store']);
+
+//  Route untuk menampilkan halaman dashboard
+ Route::get('/',[dashboardcontroller::class,'index']);
