@@ -37,5 +37,8 @@ Route::get('/dokter/create',[DokterController::class, 'create']);
 // route untuk memproses from tambah pasien
 Route::post('/dokter',[DokterController::class, 'store']);
 
+//  Route untuk menghapus data pasien
+Route::delete('/pasien', [PasienController::class, 'destroy']);
+
 //  Route untuk menampilkan halaman dashboard
- Route::get('/',[dashboardcontroller::class,'index']);
+Route::get('/',[dashboardcontroller::class,'index']);
