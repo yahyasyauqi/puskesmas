@@ -21,7 +21,6 @@
                     <th>Nama</th>
                     <th>Spesialis</th>
                     <th>No. Telp</th>
-                    <th>Alamat</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,12 +31,12 @@
                     <td>{{ $item['nama'] }}</td>
                     <td>{{ $item['spesialis'] }}</td>
                     <td>{{ $item['telp'] }}</td>
-                    <td>{{ $item['alamat'] }}</td>
                     <td>
                         <a href="#" class="btn btn-warning btn-sm">Edit</a>
                         <form action="#" method="POST" class="d-inline">
                             @csrf
                             @method('delete')
+                            <input type="hidden" value="{{ $item['id']}}" name="id">
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Hapus</button>
                         </form>
                     </td>

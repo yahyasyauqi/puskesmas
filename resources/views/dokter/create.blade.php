@@ -1,7 +1,5 @@
 @extends('main')
 @section('content')
-    
-@endsection
 
 <body>
     <div class="container">
