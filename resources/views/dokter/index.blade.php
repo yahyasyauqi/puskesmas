@@ -1,7 +1,7 @@
 @extends('main')
 @section('content')
+    
 
-<body>
     <div class="container">
         <h1>Daftar Dokter</h1>
         <br>
@@ -21,6 +21,7 @@
                     <th>Nama</th>
                     <th>Spesialis</th>
                     <th>No. Telp</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,11 +33,11 @@
                     <td>{{ $item['spesialis'] }}</td>
                     <td>{{ $item['telp'] }}</td>
                     <td>
-                        <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="#" method="POST" class="d-inline">
+                        <a href="/dokter/edit/{{$item->id}}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="/dokter" method="POST" class="d-inline">
                             @csrf
                             @method('delete')
-                            <input type="hidden" value="{{ $item['id']}}" name="id">
+                            <input type="hidden" value="{{$item['id']}}" name='dokter_id'>
                             <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">Hapus</button>
                         </form>
                     </td>
@@ -44,4 +45,4 @@
             </tbody>
         </table>
     </div>
-    @endsection
+ @endsection

@@ -42,3 +42,15 @@ Route::delete('/pasien', [PasienController::class, 'destroy']);
 
 //  Route untuk menampilkan halaman dashboard
 Route::get('/',[dashboardcontroller::class,'index']);
+
+//Route untuk menampilkan form edit pasien
+Route::get('/pasien/edit/{id}', [PasienController::class, 'edit']);
+
+// Route untuk memproses form edit pasien
+Route::put('/pasien/{id}', [PasienController::class, 'update']);
+
+//  Route untuk menampilkan form edit data pasien
+Route::get('/dokter/edit/{id}',[DokterController::class,'edit']);
+
+// Route untuk memproses form edit pasien
+Route::put('/dokter/{id}', [DokterController::class, 'update']);
