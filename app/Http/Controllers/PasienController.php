@@ -40,6 +40,7 @@ class PasienController extends Controller
         'alamat' => $request->alamat,
         'tgl_lahir' => $request->tgl_lahir,
         'telp' => $request->telp,
+        'dokter_id' => $request->dokter_id ?? 1,
     ]);
     
     return redirect('/pasien');

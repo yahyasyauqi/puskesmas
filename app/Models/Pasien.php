@@ -13,5 +13,5 @@ class Pasien extends Model
 protected $table = 'pasiens';
 
 // deklarasikan kolom yang boleh diisi
-protected $fillable = ['nama', 'jk', 'alamat', 'tgl_lahir', 'telp'];
+protected $fillable = ['nama', 'jk', 'alamat', 'tgl_lahir', 'telp', 'dokter_id'];
 }
